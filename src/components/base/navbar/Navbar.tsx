@@ -21,8 +21,7 @@ const Navbar : React.FC = () => {
             <NavSeparator/>
             <div className='navbar-navigation-container'>
                 <div className='left-align'>
-                    <img src='/assets/carbonara-icon.jpg' alt='carbonara' className='application-icon'/>
-                    <img src='/assets/carbonara-text.jpg' alt='carbonara-moto' className='application-text'/>
+                    <img src='/assets/LOGO.png' alt='carbonara-moto' className='application-text'/>
                 </div>
                 <div className='right-align'>
                     <Link disabled label='Waitlist'/>
