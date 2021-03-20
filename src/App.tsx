@@ -1,8 +1,13 @@
 import React from 'react';
+import { MainRouter } from './components/routing';
+import { store } from './redux';
+import { Provider } from 'react-redux';
 
 function App() {
   return (
-    <div>Carbonara app</div>
+    <Provider store={store}>
+      <MainRouter/>
+    </Provider>
   );
 }
 
