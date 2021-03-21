@@ -4,7 +4,7 @@ import { CountrySelect } from '../../common';
 import styled from 'styled-components';
 import COLORS from '../../../config/colors';
 import {Link, Button} from '../../base';
-import {Link as RouteLink} from 'react-router-dom';
+import {Link as RouteLink, NavLink} from 'react-router-dom';
 
 const NavSeparator = styled.div`
     width: 100%;
@@ -21,7 +21,9 @@ const Navbar : React.FC = () => {
             <NavSeparator/>
             <div className='navbar-navigation-container'>
                 <div className='left-align'>
-                    <img src='/assets/LOGO.png' alt='carbonara-moto' className='application-text'/>
+                    <NavLink to='/'>
+                        <img src='/assets/LOGO.png' alt='carbonara-moto' className='application-text'/>
+                    </NavLink>
                 </div>
                 <div className='right-align'>
                     <Link disabled label='Waitlist'/>
