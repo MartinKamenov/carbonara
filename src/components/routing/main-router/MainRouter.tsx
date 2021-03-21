@@ -6,8 +6,7 @@ import {
     Redirect,
     Route
 } from 'react-router-dom';
-import Home from '../../pages/home';
-import SignUpRoute from '../SignUpRoute';
+import {Home, SignUp} from '../../pages';
 import './MainRouter.scss';
 
 const MainRouter : React.FC = () => {
@@ -26,7 +25,7 @@ const MainRouter : React.FC = () => {
                         exact/>
                     <Route
                         path='/sign_up'
-                        component={SignUpRoute}
+                        component={SignUp}
                         exact/>
                 </Switch>
             </div>

@@ -3,3 +3,4 @@ export {default as ListAnimator} from './list-animator';
 export {default as HomePageBullets} from './home-page-bullets';
 export {default as HomePageMain} from './home-page-main';
 export {default as HomeSquaresSection} from './home-squares-section';
+export {default as ImageAnimator} from './image-animator';
