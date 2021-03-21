@@ -14,11 +14,29 @@ const SignUp: React.FC<SignUpProps> = () => {
                     <div className='form-container'></div>
                 </div>
                 <div className='col-md-6 d-none d-md-block' style={{margin: 0, padding: 0, height: '100%'}}>
-                    <Carousel images={[
-                        '/assets/sign_up_first.png',
-                        '/assets/sign_up_second.png',
-                        '/assets/sign_up_third.png'
-                    ]}/>
+                    <Carousel items={[
+                        {
+                            image: '/assets/sign_up_first.png',
+                            caption: {
+                                header: '“Easy to use and 100% FREE, I love usning Carbonara App.”'
+                            }
+                        },
+                        {
+                            image: '/assets/sign_up_second.png',
+                            caption: {
+                                header: '“Co-ordinate with your whole team with Carbonara.”'
+                            }
+                        },
+                        {
+                            image: '/assets/sign_up_third.png',
+                            caption: {
+                                header: '“My whole team learnt to use Carbonara in just minutes!”'
+                            }
+                        }
+                    ]}
+                    indicators={false}
+                    controls={false}
+                    interval={10000}/>
                 </div>
             </div>
         </div>
