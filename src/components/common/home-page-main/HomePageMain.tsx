@@ -22,7 +22,7 @@ const HomePageMain: React.FC = () => {
             </div>
             <div className='footer'>
                 <h3>Trusted across {name}</h3>
-                <div>
+                <div className='logos-container'>
                 {imageUrls.map((url, i) => (
                     <img key={i} src={url} alt={'Logo ' + i}/>
                 ))}

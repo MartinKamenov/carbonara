@@ -1,11 +1,12 @@
 import React from 'react';
-import { HomePageBullets, HomePageMain } from '../../common';
+import { HomePageBullets, HomePageMain, HomeSquaresSection } from '../../common';
  
 const Home: React.FC = () => {
     return (
         <>
             <HomePageMain/>
             <HomePageBullets/>
+            <HomeSquaresSection/>
         </>
     );
 }
