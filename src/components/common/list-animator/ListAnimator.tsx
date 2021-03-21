@@ -13,6 +13,18 @@ const ListAnimator: React.FC<ListAnimatorProps> = ({
     const secondValueRef = useRef<HTMLHeadingElement>(null);
 
     useEffect(() => {
+        const removeAnimations = (iteration: number) => {
+            if(containerRef.current && firstValueRef.current && secondValueRef.current) {
+                if(iteration === 0) {
+                    firstValueRef.current.innerHTML = values[iteration % values.length];
+                } else {
+                    firstValueRef.current.innerHTML = secondValueRef.current.innerHTML;
+                }
+                secondValueRef.current.innerHTML = values[(iteration + 1) % values.length];
+                containerRef.current.className = 'animation-container notanimating';
+            }
+        }
+
         let iteration = 0;
         removeAnimations(iteration);
 
@@ -31,15 +43,6 @@ const ListAnimator: React.FC<ListAnimatorProps> = ({
             clearInterval(interval);
         }
     }, [values]);
-
-    const removeAnimations = (iteration: number) => {
-        if(containerRef.current && firstValueRef.current && secondValueRef.current) {
-            debugger;
-            firstValueRef.current.innerHTML = values[iteration % values.length];
-            secondValueRef.current.innerHTML = values[(iteration + 1) % values.length];
-            containerRef.current.className = 'animation-container notanimating';
-        }
-    }
 
     return (
         <div className='animation-container notanimating' ref={containerRef}>

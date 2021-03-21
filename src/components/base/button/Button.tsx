@@ -1,4 +1,5 @@
 import React, {MouseEvent} from 'react';
+import './Button.scss';
 
 export type ButtonProps = {
     label: string;
@@ -21,13 +22,11 @@ const Button: React.FC<ButtonProps> = ({
         color: colors.text,
         backgroundColor: colors.background,
         border: colors.border ? `1px solid ${colors.border}` : `1px solid ${colors.background}`,
-        padding: 10,
-        borderRadius: 5,
         ...style
     };
 
     return (
-        <div onClick={onClick} style={styles}>{label}</div>
+        <div onClick={onClick} style={styles} className='custom-btn'>{label}</div>
     );
 }
  
