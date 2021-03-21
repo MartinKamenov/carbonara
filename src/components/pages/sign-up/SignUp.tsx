@@ -1,6 +1,7 @@
 import React from 'react';
 import { Carousel } from '../../base';
 import './SignUp.scss';
+import SignUpForm from './sign-up-form';
 
 export type SignUpProps = {
     
@@ -11,7 +12,9 @@ const SignUp: React.FC<SignUpProps> = () => {
         <div className='sign-up-container'>
             <div className='row' style={{margin: 0, height: '100%'}}>
                 <div className='col-md-6' style={{margin: 0, padding: 0}}>
-                    <div className='form-container'></div>
+                    <div className='form-container'>
+                        <SignUpForm/>
+                    </div>
                 </div>
                 <div className='col-md-6 d-none d-md-block' style={{margin: 0, padding: 0, height: '100%'}}>
                     <Carousel items={[

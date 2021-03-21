@@ -6,3 +6,4 @@ export {default as Link} from './link';
 export {default as Bullet} from './bullet';
 export {default as Icon} from './icon';
 export {default as Carousel} from './carousel';
+export {default as Input} from './input';
