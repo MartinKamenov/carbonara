@@ -47,6 +47,7 @@ const Navbar : React.FC = () => {
                     </RouteLink>
                 </div>
             </div>
+            <NavSeparator/>
         </div>
     )
 };

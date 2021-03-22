@@ -10,7 +10,7 @@ export interface Props {
     style?: object;
 }
  
-const Dropdown: React.SFC<Props> = ({
+const Dropdown: React.FC<Props> = ({
     name,
     value,
     options,

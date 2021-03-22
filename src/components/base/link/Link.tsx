@@ -9,7 +9,7 @@ export type LinkProps = {
     style?: object;
 }
  
-const Link: React.SFC<LinkProps> = ({
+const Link: React.FC<LinkProps> = ({
     disabled = false,
     to='/',
     label,

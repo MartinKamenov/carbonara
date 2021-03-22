@@ -9,7 +9,7 @@ export type IconProps = {
     icon: IconTypes;
 }
  
-const Icon: React.SFC<IconProps> = ({icon, style}) => {
+const Icon: React.FC<IconProps> = ({icon, style}) => {
     const mapper = {
         'facebook': faFacebookF,
         'instagram': faInstagram,
