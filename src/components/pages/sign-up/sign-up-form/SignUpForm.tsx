@@ -29,8 +29,10 @@ const SignUpForm: React.FC = () => {
         dispatch(updatePage(true));
     }
 
+    const isValid = () => steps[step].fields.every(f => f.valid);
+
     return (
-        <div className='sign_up_form'>
+        <div className={`sign_up_form ${isDone ? 'done' : ''}`}>
             {isDone ? (
                 <>
                     <h1>{done.header}</h1>
@@ -41,11 +43,14 @@ const SignUpForm: React.FC = () => {
                 {steps[step].fields.map((field, i) => (
                     <div className='input-wrapper' key={i}>
                         <div className='input-column-wrapper'>
-                        <label>{field.label}</label>
+                        {field.type !== 'checkbox' &&
+                            <label>{field.label}</label>
+                        }
                         {field.type === 'text' && (<Input
                                 style={{width: '100%'}}
                                 value={field.value.toString()}
-                                onChange={(val) => handleUpdate(field, val)}/>
+                                onChange={(val) => handleUpdate(field, val)}
+                                validationFunction={field.validationFunction}/>
                         )}
                         {field.type === 'dropdown' && (<Dropdown
                                 options={field.options !== undefined ? field.options.map(o => ({
@@ -54,16 +59,24 @@ const SignUpForm: React.FC = () => {
                                 })) : []}
                                 onChange={(val) => handleUpdate(field, val)}
                                 value={field.value.toString()}
-                                style={{width: '50%'}}/>
+                                style={{width: '50%', height: '50px'}}/>
                         )}
-                        {field.type === 'phone' && (<Input
-                                style={{width: '100%'}}
+                        {field.type === 'phone' && (<div className='input-wrapper'>
+                            <div className='phone-prefix-container'>+44 GB</div>
+                            <Input
+                                className='phone-container'
                                 value={field.value.toString()}
                                 onChange={(val) => handleUpdate(field, val)}/>
+                            </div>
                         )}
-                        {field.type === 'checkbox' && (<input type='checkbox'
-                                checked={Boolean(field.value)}
-                                onChange={() => handleUpdate(field, !field.value)}/>
+                        {field.type === 'checkbox' && (
+                            <div className='input-wrapper'>
+                                <input type='checkbox'
+                                    style={{transform: 'scale(1.5)', marginRight: 10, marginLeft: 10}}
+                                        checked={Boolean(field.value)}
+                                        onChange={() => handleUpdate(field, !field.value)}/>
+                                <label style={{ width: '50%' }}>{field.label}</label>
+                            </div>
                         )}
                         </div>
                     </div>)
@@ -73,9 +86,10 @@ const SignUpForm: React.FC = () => {
                         text: COLORS.WHITE,
                         background: COLORS.SUCCESS_GREEN
                     }}
-                    label='Next'
+                    label={(step === (steps.length - 1)) ? 'Complete' : 'Next'}
                     style={{width: 150}}
-                    onClick={nextPage}/>
+                    onClick={nextPage}
+                    disabled={!isValid()}/>
                 </div>
                 </>
             )}

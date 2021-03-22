@@ -14,11 +14,13 @@ export type SignUpInput = {
     required?: boolean;
     options?: string[];
     placeholder?: string;
+    valid: boolean;
 };
 
 export type SignUpState = {
     steps: {
        fields: SignUpInput[];
+       description: string;
     }[];
     step: number;
     done: {

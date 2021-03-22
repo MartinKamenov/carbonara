@@ -5,20 +5,23 @@ const signUpConfig: SignUpState = {
     step: 0,
     steps: [
         {
+            description: '1. Create Account',
             fields: [
                 {
                     key: 'firstName',
                     value: '',
                     validationFunction: validators.name,
                     type: 'text',
-                    label: 'First Name'
+                    label: 'First Name',
+                    valid: false
                 },
                 {
                     key: 'lastName',
                     value: '',
                     validationFunction: validators.name,
                     type: 'text',
-                    label: 'First Name'
+                    label: 'First Name',
+                    valid: false
                 },
                 {
                     key: 'phoneNumber',
@@ -26,7 +29,8 @@ const signUpConfig: SignUpState = {
                     validationFunction: validators.name,
                     placeholder: '9223 7774',
                     type: 'phone',
-                    label: 'Phone Number'
+                    label: 'Phone Number',
+                    valid: true
                 },
                 {
                     type: 'dropdown',
@@ -36,32 +40,37 @@ const signUpConfig: SignUpState = {
                     ],
                     value: 'Manager',
                     label: 'Role',
-                    key: 'role'
+                    key: 'role',
+                    valid: true
                 }
             ]
         },
         {
+            description: '2. Set up restaurant',
             fields: [
                 {
                     key: 'firstName',
                     value: '',
                     validationFunction: validators.name,
                     type: 'text',
-                    label: 'Restaurant Name'
+                    label: 'Restaurant Name',
+                    valid: false
                 },
                 {
                     key: 'address',
                     value: '',
                     validationFunction: validators.alwaysValidWithThreeSymbols,
                     type: 'text',
-                    label: 'Address'
+                    label: 'Address',
+                    valid: false
                 },
                 {
                     key: 'postCode',
                     value: '',
                     validationFunction: validators.alwaysValidWithThreeSymbols,
                     type: 'text',
-                    label: 'Post Code'
+                    label: 'Post Code',
+                    valid: false
                 },
                 {
                     key: 'city',
@@ -69,7 +78,8 @@ const signUpConfig: SignUpState = {
                     validationFunction: validators.alwaysValidWithThreeSymbols,
                     placeholder: '9223 7774',
                     type: 'text',
-                    label: 'City'
+                    label: 'City',
+                    valid: false
                 },
                 {
                     key: 'country',
@@ -79,14 +89,16 @@ const signUpConfig: SignUpState = {
                         'United Kingdom',
                         'Italy'
                     ],
-                    label: 'Country'
+                    label: 'Country',
+                    valid: true
                 },
                 {
                     type: 'checkbox',
                     required: true,
                     value: false,
                     label: 'I have read and agreed to the Terms of Use and agreed to Privacy Policy.',
-                    key: 'termsAndConditions'
+                    key: 'termsAndConditions',
+                    valid: false
                 }
             ]
         }

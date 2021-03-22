@@ -12,6 +12,11 @@ const reducer = (state: SignUpState = cloneDeep(initialState), action: action) =
             const res = stateCopy.steps[stateCopy.step].fields.find((input: any) => input.key === key);
             if(res) {
                 res.value = value;
+                if(res.validationFunction) {
+                    res.valid = res.validationFunction(value).isValid;
+                } else {
+                    res.valid = true;
+                }
             }
 
             return stateCopy;
