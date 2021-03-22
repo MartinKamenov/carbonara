@@ -2,8 +2,9 @@ import * as actionTypes from './actionTypes';
 import { action } from '../../../../types/request.middleware';
 import initialState from './initialState';
 import { SignUpState } from '../../../../types/sign_up';
+import cloneDeep from 'lodash/cloneDeep';
 
-const reducer = (state: SignUpState = initialState, action: action) => {
+const reducer = (state: SignUpState = cloneDeep(initialState), action: action) => {
     switch(action.type) {
         case actionTypes.UPDATE_FIELD: {
             const {key, value} = action.payload;
@@ -24,6 +25,9 @@ const reducer = (state: SignUpState = initialState, action: action) => {
             const stateCopy = {...state};
             stateCopy.step--;
             return stateCopy;
+        }
+        case actionTypes.RESET_STATE: {
+            return cloneDeep(initialState);
         }
         default: {
             return {...state};

@@ -6,4 +6,30 @@
     flex-direction: column;
     align-items: flex-start;
     margin: auto;
+
+    .input-column-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        label {
+            margin-bottom: 0px;
+        }
+    }
+    .input-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    .footer {
+        margin-top: auto;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 100%;
+    }
 }

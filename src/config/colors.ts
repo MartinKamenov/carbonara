@@ -6,7 +6,8 @@ const colors = {
     'WHITE': '#ffffff',
     'DARK_TRANSPARENT': '#24232DCC',
     'SUCCESS_LIGHT_GREEN': '#DDF1CE',
-    'ERROR_LIGTH_RED': '#ffad9e'
+    'ERROR_LIGTH_RED': '#ffad9e',
+    'SUCCESS_GREEN': '#56BA08'
 };
 
 export default colors;
