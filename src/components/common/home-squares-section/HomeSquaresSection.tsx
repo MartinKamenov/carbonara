@@ -26,6 +26,10 @@ const HomeSquaresSection: React.FC<HomeSquaresSectionProps> = () => {
             }
         }],
         [{
+            information: {
+                header: '“Light, Fast & Powerful, I love how easy Carbonara is to use”',
+                description: ''
+            }
         },
         {
             image: '/assets/third.png'

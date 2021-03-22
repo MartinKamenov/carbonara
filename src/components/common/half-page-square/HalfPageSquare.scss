@@ -1,5 +1,4 @@
 .half-page-square-container {
-    height: 50vw;
     margin: 0px;
     padding: 0px !important;
     display: flex;
@@ -22,5 +21,16 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .half-page-square-container {
+        height: 50vw;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .half-page-square-container {
+        height: 100vw;
     }
 }
