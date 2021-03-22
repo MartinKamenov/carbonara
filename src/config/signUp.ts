@@ -26,11 +26,11 @@ const signUpConfig: SignUpState = {
                 {
                     key: 'phoneNumber',
                     value: '',
-                    validationFunction: validators.name,
+                    validationFunction: validators.phoneNumber,
                     placeholder: '9223 7774',
                     type: 'phone',
                     label: 'Phone Number',
-                    valid: true
+                    valid: false
                 },
                 {
                     type: 'dropdown',
@@ -49,7 +49,7 @@ const signUpConfig: SignUpState = {
             description: '2. Set up restaurant',
             fields: [
                 {
-                    key: 'firstName',
+                    key: 'restaurantName',
                     value: '',
                     validationFunction: validators.name,
                     type: 'text',
@@ -76,7 +76,7 @@ const signUpConfig: SignUpState = {
                     key: 'city',
                     value: '',
                     validationFunction: validators.alwaysValidWithThreeSymbols,
-                    placeholder: '9223 7774',
+                    placeholder: 'London',
                     type: 'text',
                     label: 'City',
                     valid: false
@@ -94,8 +94,8 @@ const signUpConfig: SignUpState = {
                 },
                 {
                     type: 'checkbox',
-                    required: true,
                     value: false,
+                    validationFunction: validators.requiredCheck,
                     label: 'I have read and agreed to the Terms of Use and agreed to Privacy Policy.',
                     key: 'termsAndConditions',
                     valid: false

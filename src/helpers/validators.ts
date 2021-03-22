@@ -40,3 +40,8 @@ export const alwaysValidWithThreeSymbols: ValidatorFunction = paramsTypeWrapper(
     isValid: val.length >= 3,
     error: val.length >= 3 ? '' : 'Length must be at least 3 symbols'
 }));
+
+export const requiredCheck: ValidatorFunction = (val: string | boolean) => ({
+    isValid: Boolean(val),
+    error: ''
+});

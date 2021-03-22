@@ -30,7 +30,7 @@ const Navbar : React.FC = () => {
                     <Link disabled label='Reservation'/>
                     <Link disabled label='Why we are free?' style={{fontWeight: 'bold'}}/>
                     <Button
-                        style={{marginLeft: 10, marginRight: 10}}
+                        style={{marginLeft: 10, marginRight: 10, height: 50, lineHeight: '30px', width: 100}}
                         label={'For diners'}
                         colors={{
                             background: COLORS.WHITE,
@@ -40,6 +40,7 @@ const Navbar : React.FC = () => {
                     <RouteLink to='sign_up'
                         style={{marginLeft: 10, marginRight: 10}}>
                         <Button label={'Sign up'}
+                            style={{height: 50, lineHeight: '30px', width: 100}}
                             colors={{
                                 background: COLORS.DARK_YELLOW,
                                 text: COLORS.WHITE

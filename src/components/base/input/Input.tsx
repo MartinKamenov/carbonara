@@ -47,7 +47,7 @@ const Input: React.FC<InputProps> = ({
     const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
         onChange(value);
-        if(shouldValidate && validationFunction) {
+        if(shouldValidate && validationFunction) {     
             validate(value);
         }
     }

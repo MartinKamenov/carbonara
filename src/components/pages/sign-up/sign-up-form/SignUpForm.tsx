@@ -40,8 +40,8 @@ const SignUpForm: React.FC = () => {
                 </>
             ) : (
                 <>
-                {steps[step].fields.map((field, i) => (
-                    <div className='input-wrapper' key={i}>
+                {steps[step].fields.map((field) => (
+                    <div className='input-wrapper' key={field.key}>
                         <div className='input-column-wrapper'>
                         {field.type !== 'checkbox' &&
                             <label>{field.label}</label>
@@ -50,7 +50,8 @@ const SignUpForm: React.FC = () => {
                                 style={{width: '100%'}}
                                 value={field.value.toString()}
                                 onChange={(val) => handleUpdate(field, val)}
-                                validationFunction={field.validationFunction}/>
+                                validationFunction={field.validationFunction}
+                                placeholder={field.placeholder}/>
                         )}
                         {field.type === 'dropdown' && (<Dropdown
                                 options={field.options !== undefined ? field.options.map(o => ({
@@ -61,12 +62,14 @@ const SignUpForm: React.FC = () => {
                                 value={field.value.toString()}
                                 style={{width: '50%', height: '50px'}}/>
                         )}
-                        {field.type === 'phone' && (<div className='input-wrapper'>
+                        {field.type === 'phone' && (<div className='phone-wrapper'>
                             <div className='phone-prefix-container'>+44 GB</div>
                             <Input
                                 className='phone-container'
                                 value={field.value.toString()}
-                                onChange={(val) => handleUpdate(field, val)}/>
+                                onChange={(val) => handleUpdate(field, val)}
+                                placeholder={field.placeholder}
+                                validationFunction={field.validationFunction}/>
                             </div>
                         )}
                         {field.type === 'checkbox' && (
