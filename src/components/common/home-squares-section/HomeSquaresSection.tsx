@@ -35,7 +35,13 @@ const HomeSquaresSection: React.FC<HomeSquaresSectionProps> = () => {
             image: '/assets/third.png'
         }],
         [{
-            image: '/assets/fourth.png'
+            image: '/assets/fourth.png',
+            imageStyle: {
+                height: '70%',
+                marginTop: '15%',
+                width: '70%',
+                marginLeft: '15%'
+            }
         },
         {
             information: {
@@ -49,7 +55,12 @@ const HomeSquaresSection: React.FC<HomeSquaresSectionProps> = () => {
                 description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus '
             }
         },{
-            image: '/assets/fifth.png'
+            image: '/assets/fifth.png',
+            imageStyle: {
+                height: '70%',
+                marginTop: '15%',
+                width: '70%',
+                marginLeft: '15%'}
         }],
     ];
 

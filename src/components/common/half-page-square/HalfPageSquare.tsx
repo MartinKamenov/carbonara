@@ -5,6 +5,7 @@ import './HalfPageSquare.scss';
 
 export type HalfPageSquareProps = {
     image?: string;
+    imageStyle?: object;
     style?: object;
     information?: {
         header: string;
@@ -17,12 +18,13 @@ const HalfPageSquare: React.FC<HalfPageSquareProps> = ({
     image,
     style,
     information,
-    link
+    link,
+    imageStyle
 }) => {
     return (
         <div className='half-page-square-container col-md-6' style={style}>
             {image && (
-                <img src={image} alt='square'/>
+                <img src={image} alt='square' style={imageStyle}/>
             )}
             <div className='central-content'>
                 {information && (
