@@ -65,7 +65,7 @@ const Input: React.FC<InputProps> = ({
                 type={type}
                 onBlur={onBlur}
                 placeholder={placeholder}/>
-            {error && <div className='error-container'>{error}</div>}
+            <div className='error-container' style={{height: 5}}>{error}</div>
         </div>
     );
 }
