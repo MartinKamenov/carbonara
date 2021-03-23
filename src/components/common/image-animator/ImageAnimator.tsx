@@ -38,13 +38,19 @@ const ImageAnimator: React.FC<ImageAnimatorProps> = ({
         return () => {
             clearInterval(interval);
         }
-    }, []);
+    }, [images]);
 
     return (
         <div className='image-animation-container'>
             <div className='inner-image-animation-container notanimating' ref={containerRef}>
-                <img className='firstValue' ref={firstValueRef}></img>
-                <img className='secondValue' ref={secondValueRef}></img>
+                <img
+                    className='firstValue'
+                    ref={firstValueRef}
+                    alt='first' />
+                <img
+                    className='secondValue'
+                    ref={secondValueRef}
+                    alt='second' />
             </div>
         </div>
     );

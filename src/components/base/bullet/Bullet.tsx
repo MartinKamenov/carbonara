@@ -12,7 +12,7 @@ const Bullet: React.FC<BulletProps> = ({
 }) => {
     return (
         <div className='bullet-container'>
-            <img src={bullet.icon}/>
+            <img src={bullet.icon} alt={bullet.description}/>
             <div className='bullet-content'>
                 <h3>{bullet.description}</h3>
                 <Link to={bullet.link.to || ''}

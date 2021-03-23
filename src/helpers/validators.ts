@@ -1,3 +1,4 @@
+/*eslint-disable no-useless-escape*/
 import { ValidatorFunctionResult } from './../types/sign_up';
 import { ValidatorFunction } from "../types/sign_up";
 

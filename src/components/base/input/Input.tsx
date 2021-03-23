@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import COLORS from '../../../config/colors';
 import { ValidatorFunction } from '../../../types/sign_up';
 import './Input.scss';
@@ -30,19 +30,19 @@ const Input: React.FC<InputProps> = ({
     
     const [shouldValidate, setShouldValidate] = useState(false);
 
-    useEffect(() => {
-        if(shouldValidate) {
-            validate(value);
-        }
-    }, [shouldValidate]);
-
-    const validate = (value: string) => {
+    const validate = useCallback((value: string) => {
         if(shouldValidate && validationFunction) {
             const validationResult = validationFunction(value);
             setValid(validationResult.isValid);
             setError(validationResult.error);
         }
-    }
+    }, [shouldValidate, validationFunction]);
+
+    useEffect(() => {
+        if(shouldValidate) {
+            validate(value);
+        }
+    }, [shouldValidate, value, validate]);
 
     const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;

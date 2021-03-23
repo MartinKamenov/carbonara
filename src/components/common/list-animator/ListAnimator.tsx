@@ -46,8 +46,8 @@ const ListAnimator: React.FC<ListAnimatorProps> = ({
 
     return (
         <div className='animation-container notanimating' ref={containerRef}>
-            <h1 className='firstValue' ref={firstValueRef}></h1>
-            <h1 className='secondValue' ref={secondValueRef}></h1>
+            <h1 className='firstValue' ref={firstValueRef}> </h1>
+            <h1 className='secondValue' ref={secondValueRef}> </h1>
         </div>
     );
 }
