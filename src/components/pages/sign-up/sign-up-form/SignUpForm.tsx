@@ -29,6 +29,10 @@ const SignUpForm: React.FC = () => {
         dispatch(updatePage(true));
     }
 
+    const prevPage = () => {
+        dispatch(updatePage(false));
+    }
+
     const isValid = () => steps[step].fields.every(f => f.valid);
 
     return (
@@ -85,6 +89,17 @@ const SignUpForm: React.FC = () => {
                     </div>)
                 )}
                 <div className='footer'>
+                    {
+                        step !== 0 && (
+                            <Button colors={{
+                                text: COLORS.WHITE,
+                                background: COLORS.GRAY_FONT
+                            }}
+                            label={'Back'}
+                            style={{width: 150, marginRight: 10}}
+                            onClick={prevPage}/>
+                        )
+                    }
                     <Button colors={{
                         text: COLORS.WHITE,
                         background: COLORS.SUCCESS_GREEN
