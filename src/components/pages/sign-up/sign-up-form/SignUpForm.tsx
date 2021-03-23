@@ -44,6 +44,10 @@ const SignUpForm: React.FC = () => {
                 </>
             ) : (
                 <>
+                <div className='sign-up-header'>
+                    <h1>Sign up</h1>
+                    <div>Step {step + 1} from {steps.length}</div>
+                </div>
                 {steps[step].fields.map((field) => (
                     <div className='input-wrapper' key={field.key}>
                         <div className='input-column-wrapper'>
