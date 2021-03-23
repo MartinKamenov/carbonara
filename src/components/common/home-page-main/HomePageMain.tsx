@@ -11,7 +11,11 @@ const HomePageMain: React.FC = () => {
         .map((name) => '/assets/' + name);
     return (
         <div className='home-page-main-container'>
-            <img alt='home-page-main' src='/assets/wallpaper.png' className='main-image'/>
+            <img alt='home-page-main' src='/assets/wallpaper.png' className='main-image d-none d-md-block'/>
+            <div className='main-image-container-mobile d-md-none'>
+                <img alt='home-page-main' src='/assets/sign_up_first.png' className='main-image'/>
+                <div className='mobile-image-overlay'/>
+            </div>
             <div className='content'>
                 <h1>Used for restaurants</h1>
                 <h1>for free in <ListAnimator values={cities}/></h1>
